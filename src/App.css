@@ -1,38 +1,61 @@
+.page {
+  background: linear-gradient(to bottom, #6fb051 0%, #51abb0 100%);
+  width: 20%;
+  border: solid black;
+  padding: 20px;
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+}
 .App {
+  background: whitesmoke;
+  border-radius: 20px;
+  padding: 10px;
+}
+.logo {
+  border-radius: 50%;
+}
+.button {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 2px;
+}
+.button-name {
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.content-value {
+  max-width: 104px;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.facility {
+  display: grid;
+  place-items: center;
+  gap: 10px;
+  margin: 10px;
+}
+.facility-info {
+  text-align: center;
+  width: 176px;
+  font-size: small;
+}
+.get {
+  text-align: center;
+  background-color: green;
+  border-radius: 20px;
   color: white;
+  line-height: 2em;
 }
-
-.App-link {
-  color: #61dafb;
+.more {
+  text-align: right;
+  font-weight: bold;
+  line-height: 2em;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.but {
+  width: 100%;
+  height: 28px;
 }
