@@ -1,16 +1,21 @@
 import React from 'react';
 import './App.css';
 import Header from './components/header';
+import Option from './components/option';
 import Tagline from './components/tagline';
 import Button from './components/button';
-import Content from './components/content';
-import Facilities from './components/facilities';
+import Detail from './components/detail'
 import basic from './basic';
 import advance from './advance';
 import superior from './superior';
 
 class App extends React.Component {
   state = {
+    header: [
+      { id: 1, src: require('./images/back.jpg'), alt: "back" },
+      { id: 2, src: require('./images/home.png'), alt: "home" },
+      { id: 3, src: require('./images/human.jpeg'), alt: "profile" }
+    ],
     tagline: [],
     button: [
       { id: 1, name: 'Basic', bgColor: 'grey' },
@@ -46,25 +51,14 @@ class App extends React.Component {
   render() {
     return (
       <div className="page">
-        <Header />
+        <Header header={this.state.header} />
+        <Option />
         <Tagline tagline={this.state.tagline} />
         <div className="App">
           <div className="button">
             <Button button={this.state.button} change={this.option} />
           </div>
-          <h3 style={{ width: 'min-content' }}>Single Health</h3>
-          <div className="content">
-            <Content content={this.state.content} />
-          </div>
-          <div style={{ textAlign: "center", fontSize: "12px" }}>
-            < img src={require("./images/tick.png")} width="14px" height="14px" alt="tick" />
-            <b>What's included</b>
-          </div>
-          <div className="facility">
-            <Facilities facilities={this.state.facilities} />
-          </div>
-          <div className="get">Get this</div>
-          <div className="more">More info ></div>
+          <Detail content={this.state.content} facilities={this.state.facilities} />
         </div>
       </div>
     );

@@ -5,24 +5,15 @@ class Header extends Component {
   render() {
     return (
       <div className="header">
-        <img
-          className="logo"
-          src={require('../images/back.jpg')}
-          alt="back"
-          width="28px"
-        />
-        <img
-          className="logo"
-          src={require('../images/home.png')}
-          alt="home"
-          width="28px"
-        />
-        <img
-          className="logo"
-          src={require('../images/human.jpeg')}
-          alt="profile"
-          width="28px"
-        />
+        {this.props.header.map(logo => (
+          <img
+            key={logo.id}
+            className="logo"
+            src={logo.src}
+            alt={logo.alt}
+            width="28px"
+          />
+        ))}
       </div>
     );
   }

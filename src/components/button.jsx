@@ -2,7 +2,11 @@ import React, { Component } from 'react';
 import '../App.css';
 
 class Button extends Component {
-  change = e => {
+  componentDidMount() {
+    this.props.change(1);
+  }
+
+  onChange = e => {
     const id = Number(e.target.getAttribute('position'));
     this.props.change(id);
   };
@@ -11,16 +15,22 @@ class Button extends Component {
     return this.props.button.map((button, index) => (
       <div
         key={index}
-        style={{ backgroundColor: button.bgColor, borderRadius: button.radius }}
+        position={button.id}
+        style={{
+          backgroundColor: button.bgColor,
+          borderRadius: button.radius,
+          height: button.height
+        }}
         className="button-name"
       >
         <p>{button.name}</p>
         <input
-          onChange={e => this.change(e)}
+          onChange={e => this.onChange(e)}
           position={button.id}
           name={button}
           type="radio"
-          className="but"
+          className="btn"
+          checked={button.checked}
         />
       </div>
     ));
